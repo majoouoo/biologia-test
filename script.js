@@ -27,6 +27,12 @@ const solutions = {
     "25": "blood tissue"
 }
 
+let randomNum = Math.round(Math.random() * numbers.length - 1)
+randomNum = numbers[randomNum]
+imageEl.src = "./" + randomNum + ".png"
+localStorage.setItem("randomNum", randomNum)
+solutionEl.innerHTML = ""
+
 nextBtn.addEventListener("click", () => {
     let randomNum = Math.round(Math.random() * numbers.length - 1)
     randomNum = numbers[randomNum]
