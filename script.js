@@ -1,48 +1,72 @@
-const checkBtn = document.getElementById("checkBtn")
-const nextBtn = document.getElementById("nextBtn")
-const imageEl = document.getElementById("image")
-const solutionEl = document.getElementById("solution")
-
-const numbers = [1,2,3,4,5,6,7,8,10,11,12,13,14,16,18,19,20,21,25]
-
-const solutions = {
-    "1": "stratified squamous",
-    "2": "transitional stratified",
-    "3": "simple columnar",
-    "4": "glandular",
-    "5": "simple cuboidal",
-    "6": "simple cuboidal",
-    "7": "smell sense cells",
-    "8": "taste sense cells",
-    "10": "loose C.T.",
-    "11": "adipose tissue",
-    "12": "fibrose C.T.",
-    "13": "hyaline cartilage",
-    "14": "elastic cartilage",
-    "16": "compact bone",
-    "18": "smooth tissue",
-    "19": "skeletal muscle tissue",
-    "20": "cardiac muscle tissue",
-    "21": "neural tissue",
-    "25": "blood tissue"
+const mapNames = {
+    1: "Kara Sea",
+    2: "Yamal Peninsula",
+    3: "Taymyr Peninsula",
+    4: "Laptev Sea",
+    5: "East Siberian Sea",
+    6: "Chukchi Sea",
+    7: "Chukchi Peninsula (Chukotka)",
+    8: "Bering Strait",
+    9: "Gulf of Anadyr",
+    10: "Bering Sea",
+    11: "Kamchatka Peninsula",
+    12: "Sea of Okhotsk",
+    13: "Strait of Tartary",
+    14: "Sea of Japan",
+    15: "Korea Strait",
+    16: "Korean Peninsula",
+    17: "Bohai Gulf",
+    18: "Shandong Peninsula",
+    19: "Yellow Sea",
+    20: "East China Sea",
+    21: "Taiwan Strait",
+    22: "Luzon Strait",
+    23: "Gulf of Tonkin",
+    24: "South China Sea",
+    25: "Gulf of Thailand",
+    26: "Malay Peninsula",
+    27: "Andaman Sea",
+    28: "Strait of Malacca",
+    29: "Java Sea",
+    30: "Timor Sea",
+    31: "Bay of Bengal",
+    32: "Indian Subcontinent",
+    33: "Malabar Coast",
+    34: "Arabian Sea",
+    35: "Gulf of Oman",
+    36: "Strait of Hormuz",
+    37: "Persian Gulf",
+    38: "Arabian Peninsula",
+    39: "Bab el-Mandeb",
+    40: "Gulf of Aden",
+    41: "Red Sea",
+    42: "Sinai Peninsula",
+    43: "Asia Minor",
+    44: "Farther India"
 }
 
-let randomNum = Math.round(Math.random() * numbers.length - 1)
-randomNum = numbers[randomNum]
-imageEl.src = "./" + randomNum + ".png"
-localStorage.setItem("randomNum", randomNum)
-solutionEl.innerHTML = ""
+const nameEl = document.getElementById("nameHead")
+const mapBtn = document.getElementsByClassName("mapBtn")
+const resultEl = document.getElementById("result")
 
-nextBtn.addEventListener("click", () => {
-    let randomNum = Math.round(Math.random() * (numbers.length - 1))
-    randomNum = numbers[randomNum]
-    imageEl.src = "./" + randomNum + ".png"
-    localStorage.setItem("randomNum", randomNum)
-    solutionEl.innerHTML = ""
-})
+const generateNum = () => {
+    const randomNum = Math.ceil(Math.random() * 44)
+    return randomNum
+}
 
-checkBtn.addEventListener("click", () => {
-    const randomNum = localStorage.getItem("randomNum")
-    randomNum.substring(2, randomNum.indexOf("."))
-    solutionEl.innerHTML = solutions[randomNum]
-})
+localStorage.setItem("randomNum", generateNum())
+nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
+
+for (let i = 0; i < mapBtn.length; i++) {
+    mapBtn[i].addEventListener("click", () => {
+        if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
+            resultEl.innerHTML = "Spravne"
+            resultEl.style.color = "green"
+            localStorage.setItem("randomNum", generateNum())
+            nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
+        } else {
+            resultEl.innerHTML = "Zle"
+            resultEl.style.color = "red"
+        }
+    })
+}
