@@ -62,11 +62,19 @@ for (let i = 0; i < mapBtn.length; i++) {
         if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
             resultEl.innerHTML = "Spravne"
             resultEl.style.color = "green"
+            mapBtn[i].style.background = "green"
+            setTimeout(() => {
+                mapBtn[i].style.background = ""
+            }, 1000)
             localStorage.setItem("randomNum", generateNum())
             nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
         } else {
             resultEl.innerHTML = "Zle"
             resultEl.style.color = "red"
+            mapBtn[i].style.background = "red"
+            setTimeout(() => {
+                mapBtn[i].style.background = ""
+            }, 1000)
         }
     })
 }
