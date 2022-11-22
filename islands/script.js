@@ -43,8 +43,8 @@ nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
 for (let i = 0; i < mapBtn.length; i++) {
     mapBtn[i].addEventListener("click", () => {
         clickedName.innerHTML = mapNames[mapBtn[i].id.substring(1)]
-        clickedName.style.top = mapBtn[i].style.top + 30
-        clickedName.style.left = mapBtn[i].style.left
+        clickedName.style.top = mapBtn[i].style.top.substring(0, mapBtn[i].style.top.length - 2) + 30 + "px"
+        clickedName.style.left = mapBtn[i].style.left + "px"
         if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
             resultEl.innerHTML = "Spravne"
             resultEl.style.color = "green"
