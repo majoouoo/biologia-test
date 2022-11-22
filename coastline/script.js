@@ -48,6 +48,7 @@ const mapNames = {
 const nameEl = document.getElementById("nameHead")
 const mapBtn = document.getElementsByClassName("mapBtn")
 const resultEl = document.getElementById("result")
+const clickedName = document.getElementById("clickedName")
 
 const generateNum = () => {
     const randomNum = Math.ceil(Math.random() * 44)
@@ -59,6 +60,10 @@ nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
 
 for (let i = 0; i < mapBtn.length; i++) {
     mapBtn[i].addEventListener("click", () => {
+        clickedName.innerHTML = mapNames[mapBtn[i].id.substring(1)]
+        clickedName.style.top = mapBtn[i].getBoundingClientRect().top + 10 + "px"
+        clickedName.style.left = mapBtn[i].getBoundingClientRect().left + "px"
+
         if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
             resultEl.innerHTML = "Spravne"
             resultEl.style.color = "green"

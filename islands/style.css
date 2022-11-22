@@ -20,7 +20,7 @@ h1 {
     margin: 5px;
 }
 
-h2 {
+#clickedName {
     font-family: sans-serif;
     font-size: 16px;
     top: 0px;

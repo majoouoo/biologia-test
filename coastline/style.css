@@ -20,6 +20,15 @@ h1 {
     margin: 5px;
 }
 
+#clickedName {
+    font-family: sans-serif;
+    font-size: 16px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    text-shadow: -1px 0 1px white, 0 1px 1px white, 1px 0 1px white, 0 -1px 1px white;
+}
+
 #b1 {
 position: absolute;
 width: 20px;
