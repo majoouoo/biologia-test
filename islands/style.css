@@ -20,6 +20,10 @@ h1 {
     margin: 5px;
 }
 
+h2 {
+    font-family: sans-serif;
+}
+
 #b1 {
 position: absolute;
 width: 20px;
