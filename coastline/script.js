@@ -63,6 +63,9 @@ for (let i = 0; i < mapBtn.length; i++) {
         clickedName.innerHTML = mapNames[mapBtn[i].id.substring(1)]
         clickedName.style.top = mapBtn[i].getBoundingClientRect().top + 10 + "px"
         clickedName.style.left = mapBtn[i].getBoundingClientRect().left + "px"
+        setTimeout(() => {
+            clickedName.innerHTML = " "
+        },  1500)
 
         if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
             resultEl.innerHTML = "Správne"
@@ -70,7 +73,7 @@ for (let i = 0; i < mapBtn.length; i++) {
             mapBtn[i].style.background = "green"
             setTimeout(() => {
                 mapBtn[i].style.background = ""
-            }, 1000)
+            },  1500)
             localStorage.setItem("randomNum", generateNum())
             nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
         } else {
@@ -79,7 +82,7 @@ for (let i = 0; i < mapBtn.length; i++) {
             mapBtn[i].style.background = "red"
             setTimeout(() => {
                 mapBtn[i].style.background = ""
-            }, 1000)
+            },  1500)
         }
     })
 }

@@ -26,6 +26,7 @@ h1 {
     top: 0px;
     left: 0px;
     position: absolute;
+    text-shadow: -1px 0 1px white, 0 1px 1px white, 1px 0 1px white, 0 -1px 1px white;
 }
 
 #b1 {
