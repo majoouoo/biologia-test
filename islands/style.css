@@ -25,6 +25,7 @@ h2 {
     font-size: 16px;
     top: 0px;
     left: 0px;
+    position: absolute;
 }
 
 #b1 {
