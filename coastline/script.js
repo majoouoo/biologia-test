@@ -65,7 +65,7 @@ for (let i = 0; i < mapBtn.length; i++) {
         clickedName.style.left = mapBtn[i].getBoundingClientRect().left + "px"
 
         if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
-            resultEl.innerHTML = "Spravne"
+            resultEl.innerHTML = "Správne"
             resultEl.style.color = "green"
             mapBtn[i].style.background = "green"
             setTimeout(() => {
