@@ -1,7 +1,7 @@
 const mapNames = {
     1: "Severnaya Zemlya",
     2: "New Siberian Islands",
-    3: "Wrangel Island",
+    3: "Wrangel",
     4: "Kuril Islands",
     5: "Sakhalin",
     6: "Hokkaido",
