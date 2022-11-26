@@ -1,11 +1,11 @@
 const mapNames = {
     1: "Kara Sea",
-    2: "Yamal Peninsula",
-    3: "Taymyr Peninsula",
+    2: "Yamal",
+    3: "Taymyr",
     4: "Laptev Sea",
     5: "East Siberian Sea",
     6: "Chukchi Sea",
-    7: "Chukchi Peninsula (Chukotka)",
+    7: "Chukotka",
     8: "Bering Strait",
     9: "Gulf of Anadyr",
     10: "Bering Sea",
@@ -45,44 +45,59 @@ const mapNames = {
     44: "Farther India"
 }
 
-const nameEl = document.getElementById("nameHead")
-const mapBtn = document.getElementsByClassName("mapBtn")
+const inputEl = document.getElementById("input")
+const checkBtn = document.getElementById("checkBtn")
 const resultEl = document.getElementById("result")
-const clickedName = document.getElementById("clickedName")
+const answerBtn = document.getElementById("answerBtn")
 
 const generateNum = () => {
     const randomNum = Math.ceil(Math.random() * 44)
     return randomNum
 }
 
-localStorage.setItem("randomNum", generateNum())
-nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
-
-for (let i = 0; i < mapBtn.length; i++) {
-    mapBtn[i].addEventListener("click", () => {
-        clickedName.innerHTML = mapNames[mapBtn[i].id.substring(1)]
-        clickedName.style.top = mapBtn[i].getBoundingClientRect().top + 10 + "px"
-        clickedName.style.left = mapBtn[i].getBoundingClientRect().left + "px"
-        setTimeout(() => {
-            clickedName.innerHTML = " "
-        },  1500)
-
-        if (mapBtn[i].id.substring(1) == localStorage.getItem("randomNum")) {
-            resultEl.innerHTML = "Správne"
-            resultEl.style.color = "green"
-            mapBtn[i].style.background = "green"
-            setTimeout(() => {
-                mapBtn[i].style.background = ""
-            },  1500)
-            localStorage.setItem("randomNum", generateNum())
-            nameEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
-        } else {
-            resultEl.innerHTML = "Zle"
-            resultEl.style.color = "red"
-            mapBtn[i].style.background = "red"
-            setTimeout(() => {
-                mapBtn[i].style.background = ""
-            },  1500)
+const checkAnswer = () => {
+    if (inputEl.value.toUpperCase() == mapNames[localStorage.getItem("randomNum")].toUpperCase()) {
+        resultEl.innerHTML = "Správne"
+        resultEl.style.color = "green"
+        // reset
+        inputEl.value = ""
+        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = ""
+        // generate new
+        const randomNum = generateNum()
+        while (randomNum == localStorage.getItem("randomNum")) {
+            generateNum()
         }
-    })
+        localStorage.setItem("randomNum", randomNum)
+        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
+    } else if (inputEl.value.toUpperCase() != mapNames[localStorage.getItem("randomNum")].toUpperCase()) {
+        resultEl.innerHTML = "Zle"
+        resultEl.style.color = "red"
+    }
 }
+
+
+const randomNum = generateNum()
+localStorage.setItem("randomNum", randomNum)
+document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
+
+document.addEventListener('keypress', function (e) {
+    if (e.key === 'Enter') {
+        checkAnswer()
+    }
+})
+
+checkBtn.addEventListener("click", () => {
+    checkAnswer()
+})
+
+answerBtn.addEventListener("click", () => {
+    resultEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
+    resultEl.style.color = "black"
+    setTimeout(() => {
+        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = ""
+        const randomNum = generateNum()
+        localStorage.setItem("randomNum", randomNum)
+        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
+        resultEl.innerHTML = ""
+    }, 1500)
+})
