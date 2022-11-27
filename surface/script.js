@@ -50,9 +50,6 @@ const checkAnswer = () => {
         document.getElementById("b" + localStorage.getItem("randomNum")).style.background = ""
         // generate new
         const randomNum = generateNum()
-        while (randomNum == localStorage.getItem("randomNum")) {
-            generateNum()
-        }
         localStorage.setItem("randomNum", randomNum)
         document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
     } else if (inputEl.value.toUpperCase() != mapNames[localStorage.getItem("randomNum")].toUpperCase()) {
