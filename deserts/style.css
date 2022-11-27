@@ -1,0 +1,126 @@
+#map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    z-index: -1; 
+}
+
+body {
+    background-image: url("map.png");
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+h1 {
+    font-family: sans-serif;
+    margin: 5px;
+}
+
+#clickedName {
+    font-family: sans-serif;
+    font-size: 16px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    text-shadow: -1px 0 1px white, 0 1px 1px white, 1px 0 1px white, 0 -1px 1px white;
+}
+
+#b1 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 263.08px;
+top: 265.69px;
+}
+
+#b2 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 223.33px;
+top: 293.52px;
+}
+
+#b3 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 203.45px;
+top: 331.68px;
+}
+
+#b4 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 254.34px;
+top: 372.23px;
+}
+
+#b5 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 341.8px;
+top: 379.39px;
+}
+
+#b6 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 389.51px;
+top: 301.47px;
+}
+
+#b7 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 517.52px;
+top: 276.02px;
+}
+
+#b8 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 122.35px;
+top: 338.84px;
+}
+
+#b9 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 99.29px;
+top: 364.28px;
+}
+
+#b10 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 144.61px;
+top: 384.95px;
+}
+
+#b11 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 174.83px;
+top: 414.37px;
+}
+
+#b12 {
+position: absolute;
+width: 20px;
+height: 20px;
+left: 201.86px;
+top: 446.18px;
+}
