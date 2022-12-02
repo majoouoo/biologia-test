@@ -73,6 +73,7 @@ answerBtn.addEventListener("click", () => {
     resultEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
     resultEl.style.color = "black"
     setTimeout(() => {
+        inputEl.value = ""
         document.getElementById("b" + localStorage.getItem("randomNum")).style.background = ""
         const randomNum = generateNum()
         localStorage.setItem("randomNum", randomNum)
