@@ -2,6 +2,11 @@
   --card-size: 360px;
 }
 
+html, body {
+  /* disable horizontal scroll */
+  overflow-x: hidden;
+}
+
 body {
   background-color: rgb(18, 18, 18);
   margin: 0;
@@ -10,6 +15,9 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+
+  /* disable horizontal scroll */
+  position: relative
 }
 
 #cards {
@@ -142,18 +150,20 @@ h1 {
 #asia-btn {
   position: relative;
   top: 0px;
-  transition: top 700ms ease-in-out;
+  left: 0px;
+  transition: top 700ms ease-in-out, left 700ms ease-in-out;
 }
 
 #america-btn {
   position: relative;
   top: 0px;
-  transition: top 700ms ease-in-out;
+  left: 0px;
+  transition: top 700ms ease-in-out, left 700ms ease-in-out;
 }
 
 h2 {
   font-family: "Montserrat";
-  font-weight: 400;
+  font-weight: 300;
   color: #e6e6e6;
   margin: 20px;
   font-size: 20px;

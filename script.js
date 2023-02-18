@@ -33,19 +33,37 @@ asiaBtn.style.top = "0px"
 americaBtn.style.top = "0px"
 
 asiaBtn.addEventListener("click", () => {
-  if(asiaBtn.style.top === "0px") {
-    asiaBtn.style.top = "-250px"
-    americaBtn.style.top = "0px"
+  if(window.innerWidth < 800) {
+    if(asiaBtn.style.left === "200px") {
+      asiaBtn.style.left = "0px"
+    } else {
+      asiaBtn.style.left = "200px"
+      americaBtn.style.left = "0px"
+    }
   } else {
-    asiaBtn.style.top = "0px"
+    if(asiaBtn.style.top === "-250px") {
+      asiaBtn.style.top = "0px"
+    } else {
+      asiaBtn.style.top = "-250px"
+      americaBtn.style.top = "0px"
+    }
   }
 })
 
 americaBtn.addEventListener("click", () => {
-  if(americaBtn.style.top === "0px") {
-    americaBtn.style.top = "-250px"
-    asiaBtn.style.top = "0px"
+  if(window.innerWidth < 800) {
+    if(americaBtn.style.left === "0px") {
+      americaBtn.style.left = "200px"
+      asiaBtn.style.left = "0px"
+    } else {
+      americaBtn.style.left = "0px"
+    }
   } else {
-    americaBtn.style.top = "0px"
+    if(americaBtn.style.top === "0px") {
+      americaBtn.style.top = "-250px"
+      asiaBtn.style.top = "0px"
+    } else {
+      americaBtn.style.top = "0px"
+    }
   }
 })
