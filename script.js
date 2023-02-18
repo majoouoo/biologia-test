@@ -29,5 +29,23 @@ for(card of cards) {
 
 const asiaBtn = document.getElementById("asia-btn")
 const americaBtn = document.getElementById("america-btn")
+asiaBtn.style.top = "0px"
+americaBtn.style.top = "0px"
 
-asiaBtn.onclick(() => {})
+asiaBtn.addEventListener("click", () => {
+  if(asiaBtn.style.top === "0px") {
+    asiaBtn.style.top = "-250px"
+    americaBtn.style.top = "0px"
+  } else {
+    asiaBtn.style.top = "0px"
+  }
+})
+
+americaBtn.addEventListener("click", () => {
+  if(americaBtn.style.top === "0px") {
+    americaBtn.style.top = "-250px"
+    asiaBtn.style.top = "0px"
+  } else {
+    americaBtn.style.top = "0px"
+  }
+})
