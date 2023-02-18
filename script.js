@@ -32,38 +32,74 @@ const americaBtn = document.getElementById("america-btn")
 asiaBtn.style.top = "0px"
 americaBtn.style.top = "0px"
 
+const colorToGray = () => {
+  document.querySelector("body").style.backgroundColor = "rgb(18, 18, 18)"
+  for(card of cards) {
+    card.style.backgroundColor = "rgb(22, 22, 22)"
+  }
+  for(border of borders) {
+    border.style.backgroundColor = "rgb(44, 44, 44)"
+  }
+}
+
+const colorToGreen = () => {
+  document.querySelector("body").style.backgroundColor = "#021b14"
+  for(card of cards) {
+    card.style.backgroundColor = "#02291d"
+  }
+  for(border of borders) {
+    border.style.backgroundColor = "#175e4c"
+  }
+}
+
 asiaBtn.addEventListener("click", () => {
   if(window.innerWidth < 800) {
     if(asiaBtn.style.left === "200px") {
       asiaBtn.style.left = "0px"
+
+      colorToGray()
     } else {
       asiaBtn.style.left = "200px"
       americaBtn.style.left = "0px"
+
+      colorToGreen()
     }
   } else {
     if(asiaBtn.style.top === "-250px") {
       asiaBtn.style.top = "0px"
+
+      colorToGray()
     } else {
       asiaBtn.style.top = "-250px"
       americaBtn.style.top = "0px"
+
+      colorToGreen()
     }
   }
 })
 
 americaBtn.addEventListener("click", () => {
   if(window.innerWidth < 800) {
-    if(americaBtn.style.left === "0px") {
+    if(americaBtn.style.left === "200px") {
+      americaBtn.style.left = "0px"
+
+      colorToGray()
+    } else {
       americaBtn.style.left = "200px"
       asiaBtn.style.left = "0px"
-    } else {
-      americaBtn.style.left = "0px"
+
+      colorToGreen()
     }
   } else {
-    if(americaBtn.style.top === "0px") {
+    if(americaBtn.style.top === "-250px") {
+      americaBtn.style.top = "0px"
+
+      colorToGray()
+    } else {
       americaBtn.style.top = "-250px"
       asiaBtn.style.top = "0px"
-    } else {
-      americaBtn.style.top = "0px"
+
+      colorToGreen()
     }
   }
 })
