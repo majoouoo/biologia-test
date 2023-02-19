@@ -52,54 +52,33 @@ const colorToGreen = () => {
   }
 }
 
-asiaBtn.addEventListener("click", () => {
-  if(window.innerWidth < 800) {
-    if(asiaBtn.style.left === "200px") {
-      asiaBtn.style.left = "0px"
+const moveCard = (e) => {
+  const clickedCard = e.target.parentElement
 
+  if(window.innerWidth < 800) {
+    if(clickedCard.style.left === "200px") {
+      clickedCard.style.left = "0px"
       colorToGray()
     } else {
-      asiaBtn.style.left = "200px"
-      americaBtn.style.left = "0px"
-
+      for(border of borders) {
+        border.style.left = "0px"
+      }
+      clickedCard.style.left = "200px"
       colorToGreen()
     }
   } else {
-    if(asiaBtn.style.top === "-250px") {
-      asiaBtn.style.top = "0px"
-
+    if(clickedCard.style.top === "-250px") {
+      clickedCard.style.top = "0px"
       colorToGray()
     } else {
-      asiaBtn.style.top = "-250px"
-      americaBtn.style.top = "0px"
-
+      for(border of borders) {
+        border.style.top = "0px"
+      }
+      clickedCard.style.top = "-250px"
       colorToGreen()
     }
   }
-})
+}
 
-americaBtn.addEventListener("click", () => {
-  if(window.innerWidth < 800) {
-    if(americaBtn.style.left === "200px") {
-      americaBtn.style.left = "0px"
-
-      colorToGray()
-    } else {
-      americaBtn.style.left = "200px"
-      asiaBtn.style.left = "0px"
-
-      colorToGreen()
-    }
-  } else {
-    if(americaBtn.style.top === "-250px") {
-      americaBtn.style.top = "0px"
-
-      colorToGray()
-    } else {
-      americaBtn.style.top = "-250px"
-      asiaBtn.style.top = "0px"
-
-      colorToGreen()
-    }
-  }
-})
+asiaBtn.addEventListener("click", (e) => moveCard(e))
+americaBtn.addEventListener("click", (e) => moveCard(e))
