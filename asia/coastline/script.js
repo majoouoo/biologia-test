@@ -61,21 +61,20 @@ const checkAnswer = () => {
         resultEl.style.color = "green"
         // reset
         inputEl.value = ""
-        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = ""
+        document.getElementById("b" + localStorage.getItem("randomNum")).classList.remove("activeBtn")
         // generate new
         const randomNum = generateNum()
         localStorage.setItem("randomNum", randomNum)
-        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
+        document.getElementById("b" + localStorage.getItem("randomNum")).classList.add("activeBtn")
     } else if (inputEl.value.toUpperCase() != mapNames[localStorage.getItem("randomNum")].toUpperCase()) {
         resultEl.innerHTML = "Zle"
         resultEl.style.color = "red"
     }
 }
 
-
 const randomNum = generateNum()
 localStorage.setItem("randomNum", randomNum)
-document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
+document.getElementById("b" + localStorage.getItem("randomNum")).classList.add("activeBtn")
 
 document.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -89,13 +88,13 @@ checkBtn.addEventListener("click", () => {
 
 answerBtn.addEventListener("click", () => {
     resultEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
-    resultEl.style.color = "black"
+    resultEl.style.color = "white"
     setTimeout(() => {
         inputEl.value = ""
-        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = ""
+        document.getElementById("b" + localStorage.getItem("randomNum")).classList.remove("activeBtn")
         const randomNum = generateNum()
         localStorage.setItem("randomNum", randomNum)
-        document.getElementById("b" + localStorage.getItem("randomNum")).style.background = "red"
+        document.getElementById("b" + localStorage.getItem("randomNum")).classList.add("activeBtn")
         resultEl.innerHTML = ""
     }, 1500)
 })

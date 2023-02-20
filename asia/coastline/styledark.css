@@ -3,7 +3,7 @@ body {
     border: 0px;
     margin: 0px;
     font-family: "Montserrat";
-    background-color: #021b14;
+    background-color: #121212;
 }
 
 h1 {
@@ -85,9 +85,9 @@ h1 {
     color: white;
     border: none;
     border-radius: 15px;
-    background: #021b14;
-    box-shadow: inset 10px 10px 15px #01130e,
-                inset -10px -10px 15px #03231a;
+    background: #141414;
+    box-shadow: inset 10px 10px 15px #0e0e0e,
+                inset -10px -10px 15px #1a1a1a;
 }
 
 #input:focus {
@@ -109,13 +109,13 @@ h1 {
     color: white;
     border: none;
     border-radius: 15px;
-    background: linear-gradient(145deg, #021812, #021d15);
-    box-shadow:  10px 10px 15px #01130e,
-                 -10px -10px 15px #03231a;
+    background: linear-gradient(145deg, #121212, #151515);
+    box-shadow:  10px 10px 15px #0e0e0e,
+                 -10px -10px 15px #1a1a1a;
 }
 
 #inputBtnDiv button:hover {
-    background: #03231a;
+    background: #0d0d0d;
     cursor: pointer;
 }
 
