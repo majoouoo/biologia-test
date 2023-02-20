@@ -3,13 +3,14 @@ body {
     border: 0px;
     margin: 0px;
     font-family: "Montserrat";
-    background-color: #ebebeb;
+    background-color: #021b14;
 }
 
 h1 {
     margin: 5px;
     font-weight: 600;
     font-size: 26px;
+    color: white;
 }
 
 #clickedName {
@@ -81,11 +82,10 @@ h1 {
     padding: 0 15px;
     font-family: "Montserrat";
     font-weight: 500;
+    color: white;
     border: none;
-    border-radius: 15px;
-    background: #e6e6e6;
-    box-shadow: inset 10px 10px 15px #a1a1a1,
-                inset -10px -10px 15px #ffffff;
+    border-radius: 30px;
+    background-color: #072e24;
 }
 
 #input:focus {
@@ -104,15 +104,16 @@ h1 {
     padding: 0 20px;
     font-family: "Montserrat";
     font-weight: 500;
+    color: white;
     border: none;
     border-radius: 15px;
-    background: linear-gradient(145deg, #cfcfcf, #f6f6f6);
-    box-shadow:  10px 10px 15px #b8b8b8,
-             -10px -10px 15px #ffffff;
+    background: linear-gradient(145deg, #021812, #021d15);
+    box-shadow:  10px 10px 15px #01130e,
+                 -10px -10px 15px #03231a;
 }
 
 #inputBtnDiv button:hover {
-    background: #d1d1d1;
+    background: #03231a;
     cursor: pointer;
 }
 

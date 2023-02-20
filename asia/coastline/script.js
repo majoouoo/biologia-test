@@ -88,7 +88,7 @@ checkBtn.addEventListener("click", () => {
 
 answerBtn.addEventListener("click", () => {
     resultEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
-    resultEl.style.color = "white"
+    resultEl.style.color = "black"
     setTimeout(() => {
         inputEl.value = ""
         document.getElementById("b" + localStorage.getItem("randomNum")).classList.remove("activeBtn")
