@@ -45,56 +45,82 @@ const mapNames = {
     44: "Farther India"
 }
 
+// declare elements
 const inputEl = document.getElementById("input")
+const answerBtn = document.getElementById("answerBtn")
 const checkBtn = document.getElementById("checkBtn")
 const resultEl = document.getElementById("result")
-const answerBtn = document.getElementById("answerBtn")
 
+// generate a number and add a class
 const generateNum = () => {
-    const randomNum = Math.ceil(Math.random() * 44)
-    return randomNum
+    const chosenNum = Math.ceil(Math.random() * 44)
+    document.getElementById("b" + chosenNum).classList.add("activeBtn")
 }
 
+// check answer
 const checkAnswer = () => {
-    if (inputEl.value.toUpperCase() == mapNames[localStorage.getItem("randomNum")].toUpperCase()) {
+    const chosenNum = document.getElementsByClassName("activeBtn")[0].id.substring(1)
+    const chosenEl = document.getElementsByClassName("activeBtn")[0]
+
+    if (inputEl.value.toUpperCase() == mapNames[chosenNum].toUpperCase()) {
         resultEl.innerHTML = "Správne"
         resultEl.style.color = "green"
         // reset
         inputEl.value = ""
-        document.getElementById("b" + localStorage.getItem("randomNum")).classList.remove("activeBtn")
+        chosenEl.classList.remove("activeBtn")
         // generate new
-        const randomNum = generateNum()
-        localStorage.setItem("randomNum", randomNum)
-        document.getElementById("b" + localStorage.getItem("randomNum")).classList.add("activeBtn")
-    } else if (inputEl.value.toUpperCase() != mapNames[localStorage.getItem("randomNum")].toUpperCase()) {
+        generateNum()
+    } else if (inputEl.value.toUpperCase() != mapNames[chosenNum].toUpperCase()) {
         resultEl.innerHTML = "Zle"
         resultEl.style.color = "red"
     }
 }
 
-const randomNum = generateNum()
-localStorage.setItem("randomNum", randomNum)
-document.getElementById("b" + localStorage.getItem("randomNum")).classList.add("activeBtn")
+// ok button + enter
+document.addEventListener('keypress', e => e.key === 'Enter' ? checkAnswer() : null)
+checkBtn.addEventListener("click", () => checkAnswer())
 
-document.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        checkAnswer()
-    }
-})
-
-checkBtn.addEventListener("click", () => {
-    checkAnswer()
-})
-
+// show correct answer
 answerBtn.addEventListener("click", () => {
-    resultEl.innerHTML = mapNames[localStorage.getItem("randomNum")]
+    const chosenNum = document.getElementsByClassName("activeBtn")[0].id.substring(1)
+    const chosenEl = document.getElementsByClassName("activeBtn")[0]
+
+    resultEl.innerHTML = mapNames[chosenNum]
     resultEl.style.color = "black"
     setTimeout(() => {
         inputEl.value = ""
-        document.getElementById("b" + localStorage.getItem("randomNum")).classList.remove("activeBtn")
-        const randomNum = generateNum()
-        localStorage.setItem("randomNum", randomNum)
-        document.getElementById("b" + localStorage.getItem("randomNum")).classList.add("activeBtn")
+        chosenEl.classList.remove("activeBtn")
+        generateNum()
         resultEl.innerHTML = ""
     }, 1500)
 })
+
+const calculatePositions = () => {
+    const mapButtons = document.getElementsByClassName("mapBtn")
+    const mapEl = document.getElementById("map")
+
+    for (mapBtn of mapButtons) {
+        let x = getComputedStyle(mapBtn).left
+        let y = getComputedStyle(mapBtn).top
+        x = x.substring(0, x.length - 2)
+        y = y.substring(0, y.length - 2)
+        let mapWidth = getComputedStyle(mapEl).width
+        let mapHeight = getComputedStyle(mapEl).height
+        mapWidth = mapWidth.substring(0, mapWidth.length - 2)
+        mapHeight = mapHeight.substring(0, mapHeight.length - 2)
+
+        const correctX = (mapWidth * x) / 1000
+        const correctY = (mapHeight * y) / 761
+
+        mapBtn.style.left = correctX + "px"
+        mapBtn.style.top = correctY + "px"
+    }
+}
+
+addEventListener("resize", () => calculatePositions())
+
+console.log(document.body.getAttribute("style"))
+
+// initialize
+generateNum()
+calculatePositions()

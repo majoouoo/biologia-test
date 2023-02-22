@@ -38,7 +38,7 @@ aaaa {
   max-height: 364px;
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
   #cards {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -129,14 +129,14 @@ aaaa {
 
 h1 {
   font-family: "Montserrat";
-  font-weight: 100;
+  font-weight: 500;
   color: #e6e6e6;
   margin: 20px;
-  font-size: 24px;
+  font-size: 30px;
   position: absolute;
   bottom: 0;
+  left: 5px;
   pointer-events: none;
-  letter-spacing: 3px;
 }
 
 #asia-icon {
