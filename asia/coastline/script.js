@@ -49,7 +49,9 @@ const mapNames = {
 const inputEl = document.getElementById("input")
 const answerBtn = document.getElementById("answerBtn")
 const checkBtn = document.getElementById("checkBtn")
+const showAllBtn = document.getElementById("showAllBtn")
 const resultEl = document.getElementById("result")
+const mapList = document.getElementById("mapList")
 
 // generate a number and add a class
 const generateNum = () => {
@@ -95,32 +97,34 @@ answerBtn.addEventListener("click", () => {
     }, 1500)
 })
 
-const calculatePositions = () => {
-    const mapButtons = document.getElementsByClassName("mapBtn")
-    const mapEl = document.getElementById("map")
+// show list of map buttons
+const showMapList = () => {
+    const leftListCount = Math.ceil(Object.keys(mapNames).length / 2)
 
-    for (mapBtn of mapButtons) {
-        let x = getComputedStyle(mapBtn).left
-        let y = getComputedStyle(mapBtn).top
-        x = x.substring(0, x.length - 2)
-        y = y.substring(0, y.length - 2)
-        let mapWidth = getComputedStyle(mapEl).width
-        let mapHeight = getComputedStyle(mapEl).height
-        mapWidth = mapWidth.substring(0, mapWidth.length - 2)
-        mapHeight = mapHeight.substring(0, mapHeight.length - 2)
+    for (mapName in mapNames) {
+        const el = mapName <= leftListCount
+            ? leftList.appendChild(document.createElement("p"))
+            : rightList.appendChild(document.createElement("p"))
 
-        const correctX = (mapWidth * x) / 1000
-        const correctY = (mapHeight * y) / 761
+        el.innerHTML = mapNames[mapName]
+        el.addEventListener("click", () => {
+            const mapBtn = "b" + Object.keys(mapNames).find(key => mapNames[key] === el.innerHTML)
 
-        mapBtn.style.left = correctX + "px"
-        mapBtn.style.top = correctY + "px"
+            document.getElementById(mapBtn).classList.add("mapListBtn")
+
+            setTimeout(() => document.getElementById(mapBtn).classList.remove("mapListBtn"), 1500)
+        })
     }
 }
 
-addEventListener("resize", () => calculatePositions())
-
-console.log(document.body.getAttribute("style"))
+showAllBtn.addEventListener("click", () => {
+    const mapBtns = document.getElementsByClassName("mapBtn")
+    for(mapBtn of mapBtns) {
+        mapBtn.classList.add("mapListBtn")
+    }
+    showAllBtn.innerHTML = "Hide All"
+})
 
 // initialize
 generateNum()
-calculatePositions()
+showMapList()
