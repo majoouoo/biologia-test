@@ -25,7 +25,8 @@ h1 {
     width: 20px;
     height: 20px;
     margin: 0;
-    opacity: 0%;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
 }
 
 .activeBtn {
@@ -36,16 +37,23 @@ h1 {
     opacity: 100%;
 }
 
-.mapListBtn {
+/* .mapListBtn {
     background-color: darkblue;
     border: 3px solid white;
     box-shadow: 0 0 0 3px darkblue;
     border-radius: 10px;
     opacity: 100%;
-}
+} */
 
 p {
     margin: 0 0 5px 0;
+}
+
+h3 {
+    margin: 0;
+    font-family: "Montserrat";
+    font-weight: 700;
+    white-space: nowrap;
 }
 
 #mapList {

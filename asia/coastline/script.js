@@ -117,10 +117,24 @@ const showMapList = () => {
     }
 }
 
-showAllBtn.addEventListener("click", () => {
+const getMapBtnDistance = (el) => {
+    const elX = getComputedStyle(el).left.substring(0, getComputedStyle(el).left.length - 2)
+    const elY = getComputedStyle(el).top.substring(0, getComputedStyle(el).top.length - 2)
+
     const mapBtns = document.getElementsByClassName("mapBtn")
-    for(mapBtn of mapBtns) {
-        mapBtn.classList.add("mapListBtn")
+    for (mapBtn of mapBtns) {
+        const iterX = getComputedStyle(mapBtn).left.substring(0, getComputedStyle(mapBtn).left.length - 2)
+        const iterY = getComputedStyle(mapBtn).top.substring(0, getComputedStyle(mapBtn).top.length - 2)
+        if (Math.abs(elY - iterY) < 50) {
+            el.style.transform = "translate(0, -20px)"
+        }
+    }
+}
+
+showAllBtn.addEventListener("click", () => {
+    for (mapName in mapNames) {
+        const el = document.getElementById("b" + mapName).appendChild(document.createElement("h3"))
+        el.innerHTML = mapNames[mapName]
     }
     showAllBtn.innerHTML = "Hide All"
 })
@@ -128,3 +142,6 @@ showAllBtn.addEventListener("click", () => {
 // initialize
 generateNum()
 showMapList()
+for (const i = 0; i >= 44; i++) {
+    getMapBtnDistance(document.getElementById("b" + i))
+}
