@@ -52,6 +52,7 @@ const checkBtn = document.getElementById("checkBtn")
 const showAllBtn = document.getElementById("showAllBtn")
 const resultEl = document.getElementById("result")
 const mapList = document.getElementById("mapList")
+const mapBtns = document.getElementsByClassName("mapBtn")
 
 // generate a number and add a class
 const generateNum = () => {
@@ -110,31 +111,18 @@ const showMapList = () => {
         el.addEventListener("click", () => {
             const mapBtn = "b" + Object.keys(mapNames).find(key => mapNames[key] === el.innerHTML)
 
-            document.getElementById(mapBtn).classList.add("mapListBtn")
+            document.getElementById(mapBtn).classList.add("visibleMapBtn")
 
-            setTimeout(() => document.getElementById(mapBtn).classList.remove("mapListBtn"), 1500)
+            setTimeout(() => document.getElementById(mapBtn).classList.remove("visibleMapBtn"), 1500)
         })
     }
 }
 
-const getMapBtnDistance = (el) => {
-    const elX = getComputedStyle(el).left.substring(0, getComputedStyle(el).left.length - 2)
-    const elY = getComputedStyle(el).top.substring(0, getComputedStyle(el).top.length - 2)
-
-    const mapBtns = document.getElementsByClassName("mapBtn")
-    for (mapBtn of mapBtns) {
-        const iterX = getComputedStyle(mapBtn).left.substring(0, getComputedStyle(mapBtn).left.length - 2)
-        const iterY = getComputedStyle(mapBtn).top.substring(0, getComputedStyle(mapBtn).top.length - 2)
-        if (Math.abs(elY - iterY) < 50) {
-            el.style.transform = "translate(0, -20px)"
-        }
-    }
-}
-
 showAllBtn.addEventListener("click", () => {
-    for (mapName in mapNames) {
-        const el = document.getElementById("b" + mapName).appendChild(document.createElement("h3"))
-        el.innerHTML = mapNames[mapName]
+    for (mapBtn of mapBtns) {
+        mapBtn.classList.add("visibleMapBtn")
+        h3el = mapBtn.appendChild(document.createElement("h3"))
+        h3el.innerHTML = mapNames[mapBtn.id.substring(1)]
     }
     showAllBtn.innerHTML = "Hide All"
 })
@@ -142,6 +130,3 @@ showAllBtn.addEventListener("click", () => {
 // initialize
 generateNum()
 showMapList()
-for (const i = 0; i >= 44; i++) {
-    getMapBtnDistance(document.getElementById("b" + i))
-}

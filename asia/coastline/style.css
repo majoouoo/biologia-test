@@ -27,6 +27,7 @@ h1 {
     margin: 0;
     background-color: rgba(0, 0, 0, 0);
     border: none;
+    padding: 0;
 }
 
 .activeBtn {
@@ -37,23 +38,34 @@ h1 {
     opacity: 100%;
 }
 
-/* .mapListBtn {
-    background-color: darkblue;
-    border: 3px solid white;
-    box-shadow: 0 0 0 3px darkblue;
+.visibleMapBtn {
+    background-color: white;
+    border: 3px solid darkblue;
     border-radius: 10px;
     opacity: 100%;
-} */
-
-p {
-    margin: 0 0 5px 0;
 }
 
 h3 {
+    height: 20px;
+    width: max-content;
+    padding: 0;
     margin: 0;
     font-family: "Montserrat";
     font-weight: 700;
     white-space: nowrap;
+    opacity: 0;
+    z-index: 100;
+    font-size: 20px;
+    pointer-events: none;
+    background-color: #ebebeb;
+}
+
+.visibleMapBtn:hover h3 {
+    opacity: 1;
+}
+
+p {
+    margin: 0 0 5px 0;
 }
 
 #mapList {
