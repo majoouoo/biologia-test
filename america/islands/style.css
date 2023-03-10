@@ -1,0 +1,134 @@
+#map {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    z-index: -1;
+}
+
+body {
+    background-image: url("map.png");
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+}
+
+h1 {
+    font-family: sans-serif;
+    margin: 5px;
+}
+
+#clickedName {
+    font-family: sans-serif;
+    font-size: 16px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    text-shadow: -1px 0 1px white, 0 1px 1px white, 1px 0 1px white, 0 -1px 1px white;
+}
+
+#b1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 847.99px;
+    top: 38.79px;
+}
+
+#b2 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 705.19px;
+    top: 68.74px;
+}
+
+#b3 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 529.45px;
+    top: 372.3px;
+}
+
+#b4 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 540.43px;
+    top: 401.26px;
+}
+
+#b5 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 576.38px;
+    top: 397.26px;
+}
+
+#b6 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 611.33px;
+    top: 402.26px;
+}
+
+#b7 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 635.29px;
+    top: 429.22px;
+}
+
+#b8 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 340.72px;
+    top: 182.58px;
+}
+
+#b9 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 711.18px;
+    top: 190.56px;
+}
+
+#b10 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 547.42px;
+    top: 51.77px;
+}
+
+#b11 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 550.42px;
+    top: 348.34px;
+}
+
+#b12 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 642.28px;
+    top: 317.38px;
+}
+
+#b13 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 184.95px;
+    top: 148.63px;
+}
