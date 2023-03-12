@@ -5,6 +5,7 @@
 html, body {
   /* disable horizontal scroll */
   overflow-x: hidden;
+  background-color: rgb(18, 18, 18);
 }
 
 body {
@@ -27,10 +28,6 @@ body {
   grid-template-rows: 1fr;
   gap: 10px;
   pointer-events: none;
-}
-
-aaaa {
-  color:#02291d
 }
 
 .card {

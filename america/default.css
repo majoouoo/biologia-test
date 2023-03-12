@@ -14,7 +14,7 @@ body {
   margin: 5px 0;
   font-weight: 600;
   font-size: 26px;
-  height: 32px;
+  min-height: 32px;
 }
 
 #rightDiv {

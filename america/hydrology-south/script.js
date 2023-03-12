@@ -44,7 +44,7 @@ const checkAnswer = () => {
         chosenEl.classList.remove("activeBtn")
         // generate new
         generateNum()
-    } else if (convertString(inputEl.value) != convertString(mapNames[chosenNum])) {
+    } else {
         resultEl.innerHTML = "Zle"
         resultEl.style.color = "red"
     }

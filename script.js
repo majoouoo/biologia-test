@@ -56,14 +56,14 @@ const moveCard = (e) => {
   const clickedCard = e.target.parentElement
 
   if(window.innerWidth < 800) {
-    if(clickedCard.style.left === "200px") {
+    if(clickedCard.style.left === "250px") {
       clickedCard.style.left = "0px"
       colorToGray()
     } else {
       for(border of borders) {
         border.style.left = "0px"
       }
-      clickedCard.style.left = "200px"
+      clickedCard.style.left = "250px"
       colorToGreen()
     }
   } else {
