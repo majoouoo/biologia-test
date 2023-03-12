@@ -1,17 +1,24 @@
 const mapNames = {
-    1: "Greenland",
-    2: "Baffin Island",
-    3: "Cuba",
-    4: "Jamaica",
-    5: "Hispaniola",
-    6: "Puerto Rico",
-    7: "Lesser Antilles",
-    8: "Vancouver Island",
-    9: "Newfoundland",
-    10: "Victoria Island",
-    11: "Bahamas",
-    12: "Bermuda",
-    13: "Aleutian Islands"
+    1: "Yukon",
+    2: "Mackenzie",
+    3: "St Lawrence River",
+    4: "Columbia",
+    5: "Colorado",
+    6: "Rio Grande",
+    7: "Nelson",
+    8: "Mississippi",
+    9: "Missouri",
+    10: "Ohio",
+    11: "Arkansas",
+    12: "Lake Superior",
+    13: "Lake Huron",
+    14: "Lake Michigan",
+    15: "Lake Erie",
+    16: "Lake Ontario",
+    17: "Lake Winnipeg",
+    18: "Great Slave Lake",
+    19: "Great Bear Lake",
+    20: "Great Salt Lake"
 }
 
 const inputEl = document.getElementById("input")
