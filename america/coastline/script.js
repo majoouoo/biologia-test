@@ -15,7 +15,7 @@ const mapNames = {
     14: "Davis Strait",
     15: "Hudson Strait",
     16: "Bering Strait",
-    17: "Yucatan Channel",
+    17: "Yucatán Channel",
     18: "Panama Canal",
     19: "Baffin Bay",
     20: "Bering Sea",
