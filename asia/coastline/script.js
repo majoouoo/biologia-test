@@ -56,7 +56,7 @@ const mapBtns = document.getElementsByClassName("mapBtn")
 
 // generate a number and add a class
 const generateNum = () => {
-    const chosenNum = Math.ceil(Math.random() * 44)
+    const chosenNum = Math.ceil(Math.random() * Object.keys(mapNames).length)
     document.getElementById("b" + chosenNum).classList.add("activeBtn")
 }
 
@@ -90,11 +90,13 @@ answerBtn.addEventListener("click", () => {
 
     resultEl.innerHTML = mapNames[chosenNum]
     resultEl.style.color = "black"
+    answerBtn.disabled = true
     setTimeout(() => {
         inputEl.value = ""
         chosenEl.classList.remove("activeBtn")
         generateNum()
         resultEl.innerHTML = ""
+        answerBtn.disabled = false
     }, 1500)
 })
 
@@ -117,15 +119,6 @@ const showMapList = () => {
         })
     }
 }
-
-showAllBtn.addEventListener("click", () => {
-    for (mapBtn of mapBtns) {
-        mapBtn.classList.add("visibleMapBtn")
-        h3el = mapBtn.appendChild(document.createElement("h3"))
-        h3el.innerHTML = mapNames[mapBtn.id.substring(1)]
-    }
-    showAllBtn.innerHTML = "Hide All"
-})
 
 // initialize
 generateNum()

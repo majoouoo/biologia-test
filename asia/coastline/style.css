@@ -10,10 +10,15 @@ body {
     grid-template-rows: 1fr;
 }
 
-h1 {
-    margin: 5px;
+#result {
+    margin: 5px 0;
     font-weight: 600;
     font-size: 26px;
+    height: 32px;
+}
+
+#rightDiv {
+    padding: 5px;
 }
 
 #map {
@@ -39,39 +44,23 @@ h1 {
 }
 
 .visibleMapBtn {
-    background-color: white;
-    border: 3px solid darkblue;
+    background-color: darkblue;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px darkblue;
     border-radius: 10px;
     opacity: 100%;
-}
-
-h3 {
-    height: 20px;
-    width: max-content;
-    padding: 0;
-    margin: 0;
-    font-family: "Montserrat";
-    font-weight: 700;
-    white-space: nowrap;
-    opacity: 0;
-    z-index: 100;
-    font-size: 20px;
-    pointer-events: none;
-    background-color: #ebebeb;
-}
-
-.visibleMapBtn:hover h3 {
-    opacity: 1;
-}
-
-p {
-    margin: 0 0 5px 0;
 }
 
 #mapList {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    margin: 0;
+}
+
+#mapList p {
+    margin: 0 0 5px 0;
+    cursor: pointer;
 }
 
 #b1 {
