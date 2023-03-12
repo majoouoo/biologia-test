@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coastline</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <div>
-        <!-- <img src="./map.png" alt="mapa" id="map"> -->
+    <div id="leftDiv">
+        <img src="./map.png" alt="mapa" id="map">
         <button id="b1" class="mapBtn">
             <svg width="144" height="371" viewBox="0 0 144 371" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.41081 0.879417C36.0941 125.984 -33.562 213.862 31.5747 288.683C87.2777 352.668 70.9695 296.069 141.958 368.976" stroke="#000000" stroke-width="5"/>
@@ -47,11 +55,20 @@
         <button id="b27" class="mapBtn"></button>
         <button id="b28" class="mapBtn"></button>
     </div>
-    <input type="text" name="input" id="input">
-    <button id="checkBtn">OK</button>
-    <button id="answerBtn">Odpoveď</button>
-    <h1 id="result"></h1>
+
+    <div id="rightDiv">
+        <input type="text" name="input" id="input">
+        <button id="checkBtn">OK</button>
+        <button id="answerBtn">Odpoveď</button>
+        <h1 id="result"></h1>
+        
+        <div id="mapList">
+            <div id="leftList"></div>
+            <div id="rightList"></div>
+        </div>
+    </div>
 
     <script src="./script.js" defer></script>
 </body>
+
 </html>

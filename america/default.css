@@ -1,0 +1,78 @@
+body {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  font-family: "Montserrat";
+  background-color: #ebebeb;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+#result {
+  margin: 5px 0;
+  font-weight: 600;
+  font-size: 26px;
+  height: 32px;
+}
+
+#rightDiv {
+  padding: 5px;
+}
+
+#map {
+  width: 1000px;
+}
+
+.mapBtn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  padding: 0;
+}
+
+.mapBtn > svg > path {
+  opacity: 0%;
+}
+
+button.activeBtn:not(:has(svg)) {
+  background-color: red;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px red;
+  border-radius: 10px;
+  opacity: 100%;
+}
+
+button.activeBtn > svg > path {
+  stroke: red;
+  opacity: 100%;
+}
+
+button.visibleMapBtn:not(:has(svg)) {
+  background-color: darkblue;
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px darkblue;
+  border-radius: 10px;
+  opacity: 100%;
+}
+
+button.visibleMapBtn > svg > path {
+  stroke: darkblue;
+  opacity: 100%;
+}
+
+#mapList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin: 0;
+}
+
+#mapList p {
+  margin: 0 0 5px 0;
+  cursor: pointer;
+}
