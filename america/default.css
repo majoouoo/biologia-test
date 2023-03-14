@@ -4,16 +4,80 @@ body {
   margin: 0px;
   font-family: "Montserrat";
   background-color: #ebebeb;
+}
 
+article {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
 }
 
+nav {
+  background-color: black;
+  height: 10vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  align-items: center;
+}
+
+#input {
+  width: 400px;
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 3vh;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+}
+
+#input:focus {
+  outline: none;
+}
+
+#inputDiv {
+  border-bottom: 1px solid white;
+  margin: 0 20px;
+}
+
+#checkBtn {
+  margin: 0;
+  padding: 0;
+  height: 4vh;
+  width: 4vh;
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#checkBtn span {
+  font-size: 3vh;
+}
+
+#answerBtn {
+  margin: 0;
+  padding: 0 30px;
+  height: 4vh;
+  background-color: white;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+  font-size: 2vh;
+  font-weight: 500;
+  border: 2px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#answerBtn:hover {
+  background-color: transparent;
+  color: white;
+}
+
 #result {
-  margin: 5px 0;
+  margin: 5px 20px;
   font-weight: 600;
-  font-size: 26px;
+  font-size: 3vh;
   min-height: 32px;
 }
 

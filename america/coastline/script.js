@@ -36,6 +36,14 @@ const resultEl = document.getElementById("result")
 const mapList = document.getElementById("mapList")
 const mapBtns = document.getElementsByClassName("mapBtn")
 
+for (mapBtn of mapBtns) {
+    const top = getComputedStyle(mapBtn).top
+    const left = getComputedStyle(mapBtn).top
+
+    // mapBtn.style.top = "calc(10vh + " + top + ")"
+    mapBtn.style.left = `calc(100vw * ${left} / 1000px)`
+}
+
 // generate a number and add a class
 const generateNum = () => {
     const chosenNum = Math.ceil(Math.random() * Object.keys(mapNames).length)
@@ -76,7 +84,7 @@ answerBtn.addEventListener("click", () => {
     const chosenEl = document.getElementsByClassName("activeBtn")[0]
 
     resultEl.innerHTML = mapNames[chosenNum]
-    resultEl.style.color = "black"
+    resultEl.style.color = "white"
     answerBtn.disabled = true
     setTimeout(() => {
         inputEl.value = ""
