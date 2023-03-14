@@ -37,6 +37,7 @@ const showAllBtn = document.getElementById("showAllBtn")
 const resultEl = document.getElementById("result")
 const mapList = document.getElementById("mapList")
 const mapBtns = document.getElementsByClassName("mapBtn")
+const hideBtn = document.getElementById("hideBtn")
 
 // generate a number and add a class
 const generateNum = () => {
@@ -108,6 +109,19 @@ const showMapList = () => {
         })
     }
 }
+
+// hide list
+mapList.style.opacity = 1
+hideBtn.addEventListener("click", () => {
+    if (mapList.style.opacity == 1) {
+        mapList.style.opacity = 0
+        hideBtn.innerHTML = "Show list"
+    } else {
+        mapList.style.opacity = 1
+        hideBtn.innerHTML = "Hide list"
+    }
+})
+
 
 // initialize
 generateNum()
