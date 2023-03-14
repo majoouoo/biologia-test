@@ -22,7 +22,7 @@ const mapNames = {
     21: "Beaufort Sea",
     22: "Labrador Sea",
     23: "Sargasso Sea",
-    24: "Carribean Sea",
+    24: "Caribbean Sea",
     25: "Strait of Magellan",
     26: "Rio de la Plata"
 }
