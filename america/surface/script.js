@@ -11,7 +11,7 @@ const mapNames = {
     10: "Colorado Plateau",
     11: "Mexican Plateau",
     12: "Great Plains",
-    13: "Mississippi Aluvial Plain",
+    13: "Mississippi Alluvial Plain",
     14: "Gulf Coastal Plain",
     15: "Mojave Desert",
     16: "Sonoran Desert",
