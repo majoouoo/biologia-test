@@ -96,17 +96,16 @@ const showMapList = () => {
 }
 
 // hide list
-mapList.style.opacity = 1
+mapList.style.display = "grid"
 hideBtn.addEventListener("click", () => {
-    if (mapList.style.opacity == 1) {
-        mapList.style.opacity = 0
+    if (mapList.style.display == "grid") {
+        mapList.style.display = "none"
         hideBtn.innerHTML = "Show list"
     } else {
-        mapList.style.opacity = 1
+        mapList.style.display = "grid"
         hideBtn.innerHTML = "Hide list"
     }
 })
-
 
 // initialize
 generateNum()
