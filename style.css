@@ -24,7 +24,7 @@ body {
 
 #cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 10px;
   pointer-events: none;
@@ -150,6 +150,13 @@ h1 {
   pointer-events: none;
 }
 
+#africa-icon {
+  height: 75%;
+  margin: 5px 10px 30px 10px;
+  opacity: 18%;
+  pointer-events: none;
+}
+
 #asia-btn {
   position: relative;
   top: 0px;
@@ -158,6 +165,13 @@ h1 {
 }
 
 #america-btn {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transition: top 700ms ease-in-out, left 700ms ease-in-out, background-color 800ms ease-in-out;
+}
+
+#africa-btn {
   position: relative;
   top: 0px;
   left: 0px;
