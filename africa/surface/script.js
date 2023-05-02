@@ -27,11 +27,11 @@ const mapNames = {
 const inputEl = document.getElementById("input")
 const answerBtn = document.getElementById("answerBtn")
 const checkBtn = document.getElementById("checkBtn")
-const showAllBtn = document.getElementById("showAllBtn")
 const resultEl = document.getElementById("result")
 const mapList = document.getElementById("mapList")
 const mapBtns = document.getElementsByClassName("mapBtn")
 const hideBtn = document.getElementById("hideBtn")
+const revealMapBtn = document.getElementById("revealMapBtn")
 
 // generate a number and add a class
 const generateNum = () => {
@@ -113,6 +113,17 @@ hideBtn.addEventListener("click", () => {
     } else {
         mapList.style.display = "grid"
         hideBtn.innerHTML = "Hide list"
+    }
+})
+
+// reveal map
+revealMapBtn.addEventListener("click", () => {
+    if (revealMapBtn.innerHTML == "Show all") {
+        for (btn of mapBtns) {btn.classList.add("visibleMapBtn")}
+        revealMapBtn.innerHTML = "Hide all"
+    } else {
+        for (btn of mapBtns) {btn.classList.remove("visibleMapBtn")}
+        revealMapBtn.innerHTML = "Show all"
     }
 })
 
