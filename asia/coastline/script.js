@@ -49,10 +49,11 @@ const mapNames = {
 const inputEl = document.getElementById("input")
 const answerBtn = document.getElementById("answerBtn")
 const checkBtn = document.getElementById("checkBtn")
-const showAllBtn = document.getElementById("showAllBtn")
 const resultEl = document.getElementById("result")
 const mapList = document.getElementById("mapList")
 const mapBtns = document.getElementsByClassName("mapBtn")
+const hideBtn = document.getElementById("hideBtn")
+const revealMapBtn = document.getElementById("revealMapBtn")
 
 // generate a number and add a class
 const generateNum = () => {
@@ -60,12 +61,17 @@ const generateNum = () => {
     document.getElementById("b" + chosenNum).classList.add("activeBtn")
 }
 
+// convert string to uppercase without accents
+const convertString = (string) => {
+    return string.toUpperCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+}
+
 // check answer
 const checkAnswer = () => {
     const chosenNum = document.getElementsByClassName("activeBtn")[0].id.substring(1)
     const chosenEl = document.getElementsByClassName("activeBtn")[0]
 
-    if (inputEl.value.toUpperCase() == mapNames[chosenNum].toUpperCase()) {
+    if (convertString(inputEl.value) == convertString(mapNames[chosenNum])) {
         resultEl.innerHTML = "Správne"
         resultEl.style.color = "green"
         // reset
@@ -73,7 +79,7 @@ const checkAnswer = () => {
         chosenEl.classList.remove("activeBtn")
         // generate new
         generateNum()
-    } else if (inputEl.value.toUpperCase() != mapNames[chosenNum].toUpperCase()) {
+    } else {
         resultEl.innerHTML = "Zle"
         resultEl.style.color = "red"
     }
@@ -119,6 +125,29 @@ const showMapList = () => {
         })
     }
 }
+
+// hide list
+mapList.style.display = "grid"
+hideBtn.addEventListener("click", () => {
+    if (mapList.style.display == "grid") {
+        mapList.style.display = "none"
+        hideBtn.innerHTML = "Show list"
+    } else {
+        mapList.style.display = "grid"
+        hideBtn.innerHTML = "Hide list"
+    }
+})
+
+// reveal map
+revealMapBtn.addEventListener("click", () => {
+    if (revealMapBtn.innerHTML == "Show all") {
+        for (btn of mapBtns) {btn.classList.add("visibleMapBtn")}
+        revealMapBtn.innerHTML = "Hide all"
+    } else {
+        for (btn of mapBtns) {btn.classList.remove("visibleMapBtn")}
+        revealMapBtn.innerHTML = "Show all"
+    }
+})
 
 // initialize
 generateNum()

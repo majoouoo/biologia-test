@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deserts</title>
+    <title>Coastline</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../default.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    <div>
-        <!-- <img src="./map.png" alt="mapa" id="map"> -->
+    <div id="leftDiv">
+        <img src="./map.png" alt="mapa" id="map">
         <button id="b1" class="mapBtn"></button>
         <button id="b2" class="mapBtn"></button>
         <button id="b3" class="mapBtn"></button>
@@ -23,11 +31,22 @@
         <button id="b11" class="mapBtn"></button>
         <button id="b12" class="mapBtn"></button>
     </div>
-    <input type="text" name="input" id="input">
-    <button id="checkBtn">OK</button>
-    <button id="answerBtn">Odpoveď</button>
-    <h1 id="result"></h1>
+
+    <div id="rightDiv">
+        <input type="text" name="input" id="input">
+        <button id="checkBtn">OK</button>
+        <button id="answerBtn">Skip</button>
+        <button id="hideBtn">Hide list</button>
+        <button id="revealMapBtn">Show all</button>
+        <h1 id="result"></h1>
+        
+        <div id="mapList">
+            <div id="leftList"></div>
+            <div id="rightList"></div>
+        </div>
+    </div>
 
     <script src="./script.js" defer></script>
 </body>
+
 </html>
