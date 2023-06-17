@@ -76,3 +76,40 @@ button.visibleMapBtn > svg > path {
   margin: 0 0 5px 0;
   cursor: pointer;
 }
+
+#input {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 4px;
+  margin: 4px;
+  border-radius: 6px;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+  transition: color 0.2s, background-color 0.2s, border 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+#rightDiv button {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 4px 20px;
+  margin: 4px;
+  border-radius: 6px;
+  border: 2px solid black;
+  color: black;
+  background-color: white;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+#rightDiv button:hover {
+  color: white;
+  background-color: black;
+}
+
+#input:focus {
+  color: white;
+  background-color: black;
+}

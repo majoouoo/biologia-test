@@ -31,11 +31,11 @@ const mapNames = {
 const inputEl = document.getElementById("input")
 const answerBtn = document.getElementById("answerBtn")
 const checkBtn = document.getElementById("checkBtn")
-const showAllBtn = document.getElementById("showAllBtn")
 const resultEl = document.getElementById("result")
 const mapList = document.getElementById("mapList")
 const mapBtns = document.getElementsByClassName("mapBtn")
 const hideBtn = document.getElementById("hideBtn")
+const revealMapBtn = document.getElementById("revealMapBtn")
 
 // generate a number and add a class
 const generateNum = () => {
@@ -54,16 +54,20 @@ const checkAnswer = () => {
     const chosenEl = document.getElementsByClassName("activeBtn")[0]
 
     if (convertString(inputEl.value) == convertString(mapNames[chosenNum])) {
-        resultEl.innerHTML = "Správne"
+        resultEl.innerHTML = "Correct"
         resultEl.style.color = "green"
+        inputEl.style.boxShadow = "0px 0px 20px -2px green"
+        inputEl.style.border = "2px solid green"
         // reset
         inputEl.value = ""
         chosenEl.classList.remove("activeBtn")
         // generate new
         generateNum()
     } else {
-        resultEl.innerHTML = "Zle"
+        resultEl.innerHTML = "Incorrect"
         resultEl.style.color = "red"
+        inputEl.style.boxShadow = "0px 0px 20px -2px red"
+        inputEl.style.border = "2px solid red"
     }
 }
 
@@ -78,6 +82,8 @@ answerBtn.addEventListener("click", () => {
 
     resultEl.innerHTML = mapNames[chosenNum]
     resultEl.style.color = "black"
+    inputEl.style.boxShadow = ""
+    inputEl.style.border = "2px solid black"
     answerBtn.disabled = true
     setTimeout(() => {
         inputEl.value = ""
@@ -117,6 +123,17 @@ hideBtn.addEventListener("click", () => {
     } else {
         mapList.style.display = "grid"
         hideBtn.innerHTML = "Hide list"
+    }
+})
+
+// reveal map
+revealMapBtn.addEventListener("click", () => {
+    if (revealMapBtn.innerHTML == "Show all") {
+        for (btn of mapBtns) {btn.classList.add("visibleMapBtn")}
+        revealMapBtn.innerHTML = "Hide all"
+    } else {
+        for (btn of mapBtns) {btn.classList.remove("visibleMapBtn")}
+        revealMapBtn.innerHTML = "Show all"
     }
 })
 
