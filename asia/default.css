@@ -40,9 +40,15 @@ body {
 }
 
 button.activeBtn:not(:has(svg)) {
+  /* firefox compatibility */
+  box-shadow: 0 0 0 3px red;
+}
+
+button.activeBtn {
   background-color: red;
   border: 3px solid white;
-  box-shadow: 0 0 0 3px red;
+  /* firefox compatibility */
+  box-shadow: none;
   border-radius: 10px;
   opacity: 100%;
 }
@@ -53,9 +59,15 @@ button.activeBtn > svg > path {
 }
 
 button.visibleMapBtn:not(:has(svg)) {
+  /* firefox compatibility */
+  box-shadow: 0 0 0 3px darkblue;
+}
+
+button.visibleMapBtn {
   background-color: darkblue;
   border: 3px solid white;
-  box-shadow: 0 0 0 3px darkblue;
+  /* firefox compatibility */
+  box-shadow: none;
   border-radius: 10px;
   opacity: 100%;
 }
