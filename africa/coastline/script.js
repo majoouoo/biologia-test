@@ -40,7 +40,10 @@ const revealMapBtn = document.getElementById("revealMapBtn")
 // generate a number and add a class
 const generateNum = () => {
     const chosenNum = Math.ceil(Math.random() * Object.keys(mapNames).length)
-    document.getElementById("b" + chosenNum).classList.add("activeBtn")
+    const chosenMapBtn = document.getElementById("b" + chosenNum)
+    chosenMapBtn.classList.add("activeBtn")
+    const coords = chosenMapBtn.getBoundingClientRect()
+    scrollBy(coords.left - window.innerWidth / 2, coords.top - window.innerHeight / 2)
 }
 
 // convert string to uppercase without accents
@@ -56,8 +59,9 @@ const checkAnswer = () => {
     if (convertString(inputEl.value) == convertString(mapNames[chosenNum])) {
         resultEl.innerHTML = "Correct"
         resultEl.style.color = "green"
+        resultEl.classList.remove("placeholderResult")
         inputEl.style.boxShadow = "0px 0px 20px -2px green"
-        inputEl.style.border = "2px solid green"
+        inputEl.style.border = "1px solid green"
         // reset
         inputEl.value = ""
         chosenEl.classList.remove("activeBtn")
@@ -65,9 +69,10 @@ const checkAnswer = () => {
         generateNum()
     } else {
         resultEl.innerHTML = "Incorrect"
-        resultEl.style.color = "red"
+        resultEl.style.color = "#C60000"
+        resultEl.classList.remove("placeholderResult")
         inputEl.style.boxShadow = "0px 0px 20px -2px red"
-        inputEl.style.border = "2px solid red"
+        inputEl.style.border = "1px solid red"
     }
 }
 
@@ -82,14 +87,17 @@ answerBtn.addEventListener("click", () => {
 
     resultEl.innerHTML = mapNames[chosenNum]
     resultEl.style.color = "black"
+    resultEl.classList.remove("placeholderResult")
     inputEl.style.boxShadow = ""
-    inputEl.style.border = "2px solid black"
+    inputEl.style.border = "1px solid rgb(180, 180, 180)"
     answerBtn.disabled = true
     setTimeout(() => {
         inputEl.value = ""
         chosenEl.classList.remove("activeBtn")
         generateNum()
-        resultEl.innerHTML = ""
+        resultEl.innerHTML = "Placeholder"
+        resultEl.style.color = "black"
+        resultEl.classList.add("placeholderResult")
         answerBtn.disabled = false
     }, 1500)
 })
@@ -117,14 +125,13 @@ const showMapList = () => {
 // hide list
 mapList.style.display = "grid"
 hideBtn.addEventListener("click", () => {
-    // if (mapList.style.display == "grid") {
-    //     mapList.style.display = "none"
-    //     hideBtn.innerHTML = "Show list"
-    // } else {
-    //     mapList.style.display = "grid"
-    //     hideBtn.innerHTML = "Hide list"
-    // }
-    scrollTo(0,0)
+    if (mapList.style.display == "grid") {
+        mapList.style.display = "none"
+        hideBtn.innerHTML = "Show list"
+    } else {
+        mapList.style.display = "grid"
+        hideBtn.innerHTML = "Hide list"
+    }
 })
 
 // reveal map
@@ -141,5 +148,3 @@ revealMapBtn.addEventListener("click", () => {
 // initialize
 generateNum()
 showMapList()
-
-document.addEventListener("scroll", () => resultEl.innerText = "Scroll")

@@ -11,10 +11,22 @@ body {
 }
 
 #result {
-  margin: 5px 0;
+  display: inline-block;
+  margin: 4px;
   font-weight: 600;
   font-size: 26px;
-  min-height: 32px;
+  position: relative;
+  top: 3px;
+}
+
+.placeholderResult {
+  opacity: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#leftDiv {
+  margin-bottom: 50px;
 }
 
 #rightDiv {
@@ -81,7 +93,7 @@ button.visibleMapBtn > svg > path {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  margin: 0;
+  margin-top: 20px;
   gap: 20px;
 }
 
@@ -94,13 +106,13 @@ button.visibleMapBtn > svg > path {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  padding: 4px;
+  padding: 6px;
   margin: 4px;
   border-radius: 6px;
-  border: 2px solid black;
+  border: 1px solid rgb(180, 180, 180);
   color: black;
   background-color: white;
-  transition: color 0.2s, background-color 0.2s, border 0.2s, box-shadow 0.2s;
+  transition: color 0.1s, background-color 0.1s, border 0.1s, box-shadow 0.1s;
   outline: none;
 }
 
@@ -108,13 +120,13 @@ button.visibleMapBtn > svg > path {
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  padding: 4px 20px;
+  padding: 6px 20px;
   margin: 4px;
   border-radius: 6px;
-  border: 2px solid black;
+  border: 1px solid rgb(180, 180, 180);
   color: black;
   background-color: white;
-  transition: color 0.2s, background-color 0.2s;
+  transition: color 0.1s, background-color 0.1s;
 }
 
 #rightDiv button:hover {
@@ -125,4 +137,13 @@ button.visibleMapBtn > svg > path {
 #input:focus {
   color: white;
   background-color: black;
+}
+
+@media screen and (max-width: 800px) {
+  #mobileInputs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }
 }
