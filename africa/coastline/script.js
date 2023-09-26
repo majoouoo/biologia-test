@@ -117,13 +117,14 @@ const showMapList = () => {
 // hide list
 mapList.style.display = "grid"
 hideBtn.addEventListener("click", () => {
-    if (mapList.style.display == "grid") {
-        mapList.style.display = "none"
-        hideBtn.innerHTML = "Show list"
-    } else {
-        mapList.style.display = "grid"
-        hideBtn.innerHTML = "Hide list"
-    }
+    // if (mapList.style.display == "grid") {
+    //     mapList.style.display = "none"
+    //     hideBtn.innerHTML = "Show list"
+    // } else {
+    //     mapList.style.display = "grid"
+    //     hideBtn.innerHTML = "Hide list"
+    // }
+    scrollTo(0,0)
 })
 
 // reveal map
@@ -140,3 +141,5 @@ revealMapBtn.addEventListener("click", () => {
 // initialize
 generateNum()
 showMapList()
+
+document.addEventListener("scroll", () => resultEl.innerText = "Scroll")

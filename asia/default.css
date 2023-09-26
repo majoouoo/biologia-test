@@ -82,6 +82,7 @@ button.visibleMapBtn > svg > path {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   margin: 0;
+  gap: 20px;
 }
 
 #mapList p {
