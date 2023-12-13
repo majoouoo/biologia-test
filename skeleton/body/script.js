@@ -44,11 +44,6 @@ for(const btn of mapBtns) {
         resultEl.innerHTML = mapNames[btnId]
         resultEl.style.color = "black"
         resultEl.classList.remove("placeholderResult")
-        setTimeout(() => {
-            resultEl.innerHTML = "Placeholder"
-            resultEl.style.color = "black"
-            resultEl.classList.add("placeholderResult")
-        }, 1500)
     })
 }
 
