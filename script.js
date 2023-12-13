@@ -30,9 +30,11 @@ for(card of cards) {
 const asiaBtn = document.getElementById("asia-btn")
 const americaBtn = document.getElementById("america-btn")
 const africaBtn = document.getElementById("africa-btn")
+const skeletonBtn = document.getElementById("skeleton-btn")
 asiaBtn.style.top = "0px"
 americaBtn.style.top = "0px"
 africaBtn.style.top = "0px"
+skeletonBtn.style.top = "0px"
 
 const colorToGray = () => {
   document.querySelector("body").style.backgroundColor = "rgb(18, 18, 18)"
@@ -85,3 +87,4 @@ const moveCard = (e) => {
 asiaBtn.addEventListener("click", (e) => moveCard(e))
 americaBtn.addEventListener("click", (e) => moveCard(e))
 africaBtn.addEventListener("click", (e) => moveCard(e))
+skeletonBtn.addEventListener("click", (e) => moveCard(e))

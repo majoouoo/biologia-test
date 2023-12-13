@@ -1,0 +1,147 @@
+body {
+  padding: 0px;
+  border: 0px;
+  margin: 0px;
+  font-family: "Montserrat";
+  background-color: #ebebeb;
+
+  display: grid;
+  grid-template-columns: 800px 1fr;
+  grid-template-rows: 1fr;
+}
+
+#result {
+  display: inline-block;
+  margin: 4px;
+  font-weight: 600;
+  font-size: 26px;
+  position: sticky;
+  top: 18px;
+}
+
+.placeholderResult {
+  opacity: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#leftDiv {
+  margin-bottom: 50px;
+}
+
+#rightDiv {
+  padding: 0 15px;
+}
+
+#map {
+  width: 800px;
+}
+
+.mapBtn {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.mapBtn > svg > path {
+  opacity: 0%;
+}
+
+button.activeBtn:not(:has(svg)) {
+  /* firefox compatibility */
+  box-shadow: 0 0 0 3px red;
+}
+
+button.activeBtn {
+  background-color: red;
+  border: 3px solid white;
+  /* firefox compatibility */
+  box-shadow: none;
+  border-radius: 10px;
+  opacity: 100%;
+}
+
+button.activeBtn > svg > path {
+  stroke: red;
+  opacity: 100%;
+}
+
+button.visibleMapBtn:not(:has(svg)) {
+  /* firefox compatibility */
+  box-shadow: 0 0 0 3px darkblue;
+}
+
+button.visibleMapBtn {
+  background-color: darkblue;
+  border: 3px solid white;
+  /* firefox compatibility */
+  box-shadow: none;
+  border-radius: 10px;
+  opacity: 100%;
+}
+
+button.visibleMapBtn > svg > path {
+  stroke: darkblue;
+  opacity: 100%;
+}
+
+#mapList {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+#mapList p {
+  margin: 0 0 5px 0;
+  cursor: pointer;
+}
+
+#input {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 6px;
+  margin: 4px;
+  border-radius: 6px;
+  border: 1px solid rgb(180, 180, 180);
+  color: black;
+  background-color: white;
+  transition: color 0.1s, background-color 0.1s, border 0.1s, box-shadow 0.1s;
+  outline: none;
+}
+
+#rightDiv button {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 6px 20px;
+  margin: 4px;
+  border-radius: 6px;
+  border: 1px solid rgb(180, 180, 180);
+  color: black;
+  background-color: white;
+  transition: color 0.1s, background-color 0.1s;
+}
+
+#rightDiv button:hover {
+  color: white;
+  background-color: black;
+}
+
+#input:focus {
+  color: white;
+  background-color: black;
+}
+
+@media screen and (max-width: 800px) {
+  #mobileInputs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+  }
+}
